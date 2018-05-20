@@ -53,7 +53,7 @@ def chec(x):
                 vibrate(4)
             if i == 'e':
                 vibrate(5)
-option = input(cian+"\n\tEscolha a opção: \n\t01.para postar gabarito\n\t02.para ler gabarito\n\t>>>> "+cl)
+option = input(mag+"\n\tEscolha a opção: \n\t01.para postar gabarito\n\t02.para ler gabarito\n\t>>>> "+cl)
 
 if(option == "2" or option == "02"):
     for i in range(3):
