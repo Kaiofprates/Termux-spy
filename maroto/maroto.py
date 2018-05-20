@@ -13,6 +13,7 @@ print(red+' _______                                 \n(_______)                 
 print(cian+'{:_^47}'.format('dev_kailp*may18'))
 print(cl)
 print(neg+"*Copie o link da página com as respostas no site Dontpad e clique enter,\n!!!!NÃO  é necessário colar!!!!.\nO formato das respostas deverá seguir o modelo:\n\t[gabarito: a b c d e ]\n"+cl)
+input(green+"\n\t>>>>TECLE ENTER<<<<"+cl)
 status, link = sp.getstatusoutput("termux-clipboard-get")
 url = requests.get(link)
 
