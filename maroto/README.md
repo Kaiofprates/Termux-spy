@@ -9,6 +9,6 @@
 
 > Basta copiar o link do site, não é necessário colar no programa, apenas tecle enter. 
 
-> As respostas tem de estar escritas na pagina com esse formato [gabarito: a b c e]
+> As respostas tem de estar escritas na pagina com esse formato **[gabarito: a b c e]
 
 > Exemplo de gabarito: http://www.dontpad.com/maroto_example
