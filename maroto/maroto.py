@@ -29,6 +29,31 @@ def vibrate(x):
 def pes(x):
     bus = re.findall(r'id="text">gabarito:(.*)</textarea>\n\t\t</div>\n\t\t\n\t\t<input',x)
     return bus
+def speak(x):
+    while not x:
+        url = requests.get(link)
+        print(red+"Escutando..."+cl)
+        os.system("clear")
+        x = re.findall(r'id="text">gabarito:(.*)</textarea>\n\t\t</div>\n\t\t\n\t\t<input',url.text)
+    else:
+        print(green+"Lendo"+cl)
+        time.sleep(2)
+        os.system("termux-tts-speak lendo")
+        time.sleep(2)
+        x = str(x[0])
+        x = x.split()
+        for i in x[:]:
+            time.sleep(2)
+            if i == 'a':
+                os.system("termux-tts-speak a")
+            if i == 'b':
+                os.system("termux-tts-speak b")
+            if i == 'c':
+                os.system("termux-tts-speak c")
+            if i == 'd':
+                os.system("termux-tts-speak d")
+            if i == 'e':
+                os.system("termux-tts-speak é")
 def chec(x):
     while not x:
         url = requests.get(link)
@@ -54,12 +79,29 @@ def chec(x):
                 vibrate(4)
             if i == 'e':
                 vibrate(5)
-option = input(mag+"\n\tEscolha a opção: \n\t01.para postar gabarito\n\t02.para ler gabarito\n\t>>>> "+cl)
+def dica (x):
+    while not x:
+        url = requests.get(link)
+        print(red+"Escutando..."+cl)
+        os.system("clear")
+        x = re.findall(r'id="text">gabarito:(.*)</textarea>\n\t\t</div>\n\t\t\n\t\t<input',url.text)
+    else:
+        print(green+"Lendo"+cl)
+        for i in range(3):
+            os.system('termux-tts-speak -r 0.4 '+str(x))
+
+option = input(mag+"\n\tEscolha a opção: \n\t01.para postar gabarito\n\t02.para ler gabarito\n\t03.para ouvir gabarito\n\t04.Ouvir dicas\n\t>>>> "+cl)
 
 if(option == "2" or option == "02"):
     for i in range(3):
         chec(pes(url.text))
 if(option == "1" or option == "01"):
     enviar()
-if(option != "1" and option != "01" and option != "02" and option != "2"):
+if(option == "3" or option == "03"):
+    for i in range(3):
+        speak(pes(url.text))
+if(option == "4" or option == "04"):
+    dica(pes(url.text))
+
+if(option != "1" and option != "01" and option != "02" and option != "2" and option != "3" and option != "03" and option != "4" and option != "04"):
     print(red+"\n\tESCOLHA INVÁLIDA"+cl)
